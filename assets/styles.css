@@ -667,4 +667,72 @@ a:hover { color: var(--accent-strong); }
   .hero--cinematic{ min-height: 68vh; background-attachment: scroll; }
   .hero-actions{ flex-wrap:wrap; }
 }
+/* 两栏布局 */
+.about-split{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr; /* 左右两栏 */
+  gap: 32px;
+  align-items: start;
+}
+
+/* 右侧容器内部：三个小盒子纵向排列 */
+.about-spec{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:16px;
+}
+
+/* 小盒子样式 */
+.spec-item{
+  display:flex;
+  gap:12px;
+  padding:16px 18px;
+  border:1px solid #e8e8e8;
+  border-radius:12px;
+  background:#fff;
+}
+
+.spec-icon{
+  font-size:20px;
+  line-height:1;
+  margin-top:2px;
+}
+
+.spec-body{ display:flex; flex-direction:column; gap:4px; }
+.spec-label{ font-size:12px; color:#666; letter-spacing:.02em; }
+.spec-value{ font-size:15px; font-weight:600; color:#111; }
+
+/* 左侧名片（可选美化） */
+.about-card{
+  padding:20px;
+  border:1px solid #f0f0f0;
+  border-radius:14px;
+  background:#fff;
+}
+.about-chip{
+  display:inline-block;
+  font-size:12px;
+  color:#666;
+  background:#f7f7f7;
+  border-radius:999px;
+  padding:4px 10px;
+  margin-bottom:12px;
+}
+.about-brand{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.about-logo{ width:48px; height:48px; object-fit:contain; }
+.about-title h3{ margin:0 0 4px; font-size:20px; }
+.about-title p{ margin:0; color:#555; font-size:13px; }
+
+.about-stats{ list-style:none; padding:0; margin:16px 0; display:grid; gap:8px; }
+.about-stats .k{ display:inline-block; width:84px; color:#666; font-size:13px; }
+.about-stats .v{ font-weight:600; color:#111; }
+
+/* 按钮（可复用你现有样式） */
+.btn{ display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; background:#111; color:#fff; }
+.btn-outline{ background:#fff; color:#111; border:1px solid #ddd; }
+
+/* 响应式：窄屏改为单栏 */
+@media (max-width: 900px){
+  .about-split{ grid-template-columns: 1fr; }
+}
 
